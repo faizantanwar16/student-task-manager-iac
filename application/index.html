@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+  Reference / preview copy only.
+  The Worker does not serve this file directly — Cloudflare Workers
+  can't serve a separate static folder without extra asset-binding
+  tooling, so the deployed UI is embedded as a string inside
+  worker.js (see HTML_PAGE / INLINE_CSS / INLINE_JS there).
+  This copy exists so you can preview and edit the interface locally
+  without redeploying. If you change the design, port the change
+  into worker.js for it to actually go live.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Task Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+
+    <header class="masthead">
+      <div class="masthead-inner">
+        <h1>Task Board</h1>
+        <p class="masthead-sub">Coursework, deadlines, and everything in between &mdash; tracked in one running list.</p>
+      </div>
+    </header>
+
+    <main class="board">
+      <section class="composer" id="composer">
+        <h2>New task</h2>
+        <form id="taskForm">
+          <input type="text" id="taskTitle" placeholder="e.g. Submit Cloud Computing Assignment" required />
+          <div class="composer-row">
+            <select id="taskPriority">
+              <option value="Low">Low priority</option>
+              <option value="Medium" selected>Medium priority</option>
+              <option value="High">High priority</option>
+            </select>
+            <select id="taskStatus">
+              <option value="Pending" selected>Pending</option>
+              <option value="Completed">Completed</option>
+            </select>
+            <button type="submit" id="addBtn">Add task</button>
+          </div>
+        </form>
+        <p id="formMessage" class="message" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="list-section">
+        <div class="list-head">
+          <h2>Your tasks</h2>
+          <span class="list-count" id="taskCount">0 tasks</span>
+        </div>
+        <div id="taskList" class="task-list"></div>
+        <p id="listMessage" class="message" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer class="colophon">
+      <p>Backed by Cloudflare Workers KV &mdash; every change here is saved instantly, no publish step needed.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

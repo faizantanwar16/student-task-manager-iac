@@ -1,0 +1,19 @@
+# Terraform
+# Note: terraform.lock.hcl is intentionally NOT ignored — it should be
+# committed so everyone (and CI) resolves the same provider version.
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/terraform.tfstate.*.backup
+terraform/*.tfvars
+!terraform/terraform.tfvars.example
+terraform/crash.log
+terraform/crash.*.log
+
+# Node (only relevant if you add tooling later)
+node_modules/
+
+# OS / editor noise
+.DS_Store
+.vscode/
+*.log

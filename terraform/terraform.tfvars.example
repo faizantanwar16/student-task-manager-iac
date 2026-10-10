@@ -1,0 +1,10 @@
+# Copy this file to terraform.tfvars and fill in your real values.
+# terraform.tfvars is git-ignored — never commit your real API token.
+
+cloudflare_api_token = "paste-your-cloudflare-api-token-here"
+account_id           = "paste-your-cloudflare-account-id-here"
+workers_subdomain    = "paste-your-workers-dev-subdomain-here"
+
+worker_name       = "student-task-manager"
+kv_namespace_name = "student_tasks"
+environment       = "production"
